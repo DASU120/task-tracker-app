@@ -1,0 +1,13 @@
+/* frontend/src/components/InsightsPanel.css */
+.insights-panel {
+  background: #e8f4fc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #2196F3;
+}
+
+.insights-panel h2 {
+  margin-top: 0;
+  color: #0d4a6b;
+}
