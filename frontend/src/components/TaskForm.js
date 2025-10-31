@@ -25,7 +25,7 @@ const TaskForm = ({ onTaskCreated }) => {
     };
 
     try {
-      const res = await fetch('http://localhost:3000/tasks', {
+      const res = await fetch('https://task-tracker-app-fyxg.onrender.com/tasks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newTask),

@@ -9,7 +9,7 @@ const TaskList = () => {
   const [sort, setSort] = useState('');
 
   const fetchTasks = useCallback(async () => {
-    let url = 'http://localhost:3000/tasks';
+    let url = 'https://task-tracker-app-fyxg.onrender.com/tasks';
     const params = new URLSearchParams();
     if (statusFilter) params.append('status', statusFilter);
     if (priorityFilter) params.append('priority', priorityFilter);
@@ -24,13 +24,13 @@ const TaskList = () => {
     } catch (err) {
       console.error('Failed to fetch tasks', err);
     }
-  }, [statusFilter, priorityFilter, sort]); // ✅ Dependencies are correct
+  }, [statusFilter, priorityFilter, sort]); 
 
   const deleteTask = async (id) => {
     if (!window.confirm('Are you sure you want to delete this task?')) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/tasks/${id}`, {
+      const res = await fetch(`https://task-tracker-app-fyxg.onrender.com/tasks/${id}`, {
         method: 'DELETE',
       });
 
@@ -49,7 +49,7 @@ const TaskList = () => {
 
   const updateTask = async (id, updates) => {
     try {
-      const res = await fetch(`http://localhost:3000/tasks/${id}`, {
+      const res = await fetch(`https://task-tracker-app-fyxg.onrender.com/tasks/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updates),
@@ -66,7 +66,7 @@ const TaskList = () => {
   // Fetch tasks when filters/sort change
   useEffect(() => {
     fetchTasks();
-  }, [fetchTasks]); // ✅ Now safe: fetchTasks is stable (useCallback)
+  }, [fetchTasks]); 
 
   return (
     <div className="task-list-container">

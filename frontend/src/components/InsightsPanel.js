@@ -8,7 +8,7 @@ const InsightsPanel = () => {
   useEffect(() => {
     const fetchInsights = async () => {
       try {
-        const res = await fetch('http://localhost:3000/insights');
+        const res = await fetch('https://task-tracker-app-fyxg.onrender.com/insights');
         const data = await res.json();
         setSummary(data.summary);
       } catch (err) {
