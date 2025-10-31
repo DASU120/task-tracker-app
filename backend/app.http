@@ -1,0 +1,2 @@
+### Get server status
+GET http://localhost:3000
