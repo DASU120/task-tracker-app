@@ -20,7 +20,7 @@ function App() {
       <main>
         <InsightsPanel />
         <TaskForm onTaskCreated={forceRefetch} />
-        <TaskList key={trigger} /> {/* Re-mount when trigger changes */}
+        <TaskList key={trigger} /> 
       </main>
     </div>
   );

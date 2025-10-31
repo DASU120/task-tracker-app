@@ -9,7 +9,7 @@ const TaskForm = ({ onTaskCreated }) => {
   const [dueDate, setDueDate] = useState('');
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // 🔥 Critical: prevent page reload
+    e.preventDefault(); 
 
     // Validate on frontend too
     if (!title.trim() || !dueDate) {
@@ -21,7 +21,7 @@ const TaskForm = ({ onTaskCreated }) => {
       title: title.trim(),
       description: description.trim(),
       priority,
-      due_date: dueDate, // This is already YYYY-MM-DD from <input type="date">
+      due_date: dueDate, 
     };
 
     try {
