@@ -6,7 +6,9 @@ const { getInsights } = require('./src/services/insight.service');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: "https://task-tracker-dass.vercel.app"
+}));
 app.use(express.json());
 
 app.use('/tasks', tasksRouter);
@@ -21,7 +23,7 @@ app.get('/insights', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Backend is running successfully');
+  res.send('Backend is running successfully!');
 });
 
 app.listen(PORT, () => {
